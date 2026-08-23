@@ -18,7 +18,8 @@ import java.util.List;
 
 /**
  * Command implementation for creating a new hologram.
- * Supports creating private (-p) holograms and parsing markdown/item icons.
+ * Supports creating private (-p) holograms, parsing markdown/item icons,
+ * and creating multiple lines using the '|' separator.
  *
  * @author a8kj7sea
  * @version 1.5.7
@@ -45,7 +46,7 @@ public class CreateCommand implements SubCommand {
         Player player = (Player) sender;
 
         if (args.length < 1) {
-            player.sendMessage(ChatColor.RED + "Usage: /hd create <name> [-p] [text]");
+            player.sendMessage(ChatColor.RED + "Usage: /sh create <name> [-p] [text|text2|...]");
             return;
         }
 
@@ -62,7 +63,10 @@ public class CreateCommand implements SubCommand {
 
         List<String> lines = new ArrayList<>();
         if (argsList.size() > 1) {
-            lines.add(String.join(" ", argsList.subList(1, argsList.size())));
+            String fullText = String.join(" ", argsList.subList(1, argsList.size()));
+            for (String part : fullText.split("\\|")) {
+                lines.add(part.trim());
+            }
         } else {
             lines.add(ChatColor.GRAY + "New Hologram");
         }

@@ -35,7 +35,7 @@ Built with modern Java 21 standards, the project utilizes SOLID principles, a mu
 
 ## Commands & Permissions
 
-Root command: `/slimehologram` (Aliases: `/sh`, `/hologram`, `/hd`)
+Root command: `/slimehologram` (Aliases: `/sh`, `/hologram`)
 
 | Command | Description | Permission |
 | --- | --- | --- |

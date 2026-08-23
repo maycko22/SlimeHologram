@@ -31,7 +31,7 @@ public class CopyCommand implements SubCommand {
     public void execute(CommandSender sender, String[] args) {
         if (!(sender instanceof Player)) return;
         if (args.length < 2) {
-            sender.sendMessage(ChatColor.RED + "Usage: /hd copy <source> <destination>");
+            sender.sendMessage(ChatColor.RED + "Usage: /sh copy <source> <destination>");
             return;
         }
 
