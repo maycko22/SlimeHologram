@@ -1,0 +1,24 @@
+name: SlimeHologram
+version: 1.5.7
+main: me.a8kj.bukkitprojects.hologram.base.HologramPlugin
+api-version: 1.13
+author: a8kj
+softdepend:
+  - PlaceholderAPI
+libraries:
+  - "com.github.retrooper.packetevents:packetevents-spigot:${packetevents.version}"
+
+commands:
+  holotest:
+    description: Test the hologram system
+    usage: /holotest <global | cinematic | click | cleanup>
+  sh:
+    description: Hologram commands
+    usage: /sh help
+    aliases: [ hologram, holograms, sh ]
+
+  permissions:
+    holograms.use:
+      default: true
+    holograms.admin:
+      default: op
