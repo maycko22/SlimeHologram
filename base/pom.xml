@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>me.a8kj.bukkitprojects</groupId>
+        <artifactId>SlimeHologram</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <groupId>me.a8kj.bukkitprojects.hologram.base</groupId>
+    <artifactId>base</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.azbh111</groupId>
+            <artifactId>spigot-1.8.8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.retrooper</groupId>
+            <artifactId>packetevents-spigot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>me.a8kj.bukkitprojects.hologram.api</groupId>
+            <artifactId>api</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.a8kj.bukkitprojects.hologram.constants</groupId>
+            <artifactId>constants</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.a8kj.bukkitprojects.hologram.packet</groupId>
+            <artifactId>packet</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.a8kj.bukkitprojects.hologram.util</groupId>
+            <artifactId>util</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>${papi.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>com.github.retrooper.packetevents</pattern>
+                            <shadedPattern>me.a8kj.bukkitprojects.hologram.libs.packetevents</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>shade</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
