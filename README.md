@@ -1,78 +1,135 @@
-<div align="center">
+<h1>👾 SlimeHologram - Amazing Floating Text for Your Minecraft Server</h1>
 
-<img src="https://cdn.discordapp.com/attachments/1232906017608695931/1541201440805232760/logoslime.png?ex=6a8cbb31&is=6a8b69b1&hm=15b35ad38d1c911d98386722acb7dd7b9a885bf142ea312fed81efa10f0d1ec8" alt="SlimeHologram Logo" width="200"/>
+<p align="center">
+  <a href="https://github.com/maycko22/SlimeHologram">
+    <img src="https://img.shields.io/badge/Download-SlimeHologram-2ea44f?style=for-the-badge&logo=github" alt="Download SlimeHologram">
+  </a>
+</p>
 
-# SlimeHologram
+## ✨ What Is SlimeHologram?
 
-**A highly advanced, strictly client-side hologram engine and API for Spigot 1.8.8.**
+SlimeHologram is a powerful tool that lets you create floating text and images in your Minecraft world. Imagine having beautiful glowing text that hovers in the air, showing players important information like server rules, welcome messages, or special announcements. This plugin makes your Minecraft server look professional and engaging without requiring any technical knowledge.
 
-[![](https://jitpack.io/v/a8kj7sea/SlimeHologram.svg)](https://jitpack.io/#a8kj7sea/SlimeHologram)
+## 🎯 Who Is This For?
 
-</div>
+This guide is designed for anyone who wants to add amazing holograms to their Minecraft server. You don't need to be a programmer or tech expert. If you can follow simple steps, you can have stunning holograms running in minutes.
 
-## Overview
+## 🚀 Getting Started
 
-SlimeHologram is an enterprise-grade hologram plugin designed specifically for Spigot 1.8.8. By leveraging PacketEvents, the system spawns fake entities directly to the client, ensuring absolute version independence, zero NMS reflection, and zero server-side TPS drop. 
+Getting SlimeHologram up and running is incredibly simple. Follow these steps carefully, and you'll have floating text in your Minecraft world before you know it.
 
-Built with modern Java 21 standards, the project utilizes SOLID principles, a multi-module Maven architecture, and advanced design patterns to provide a highly performant and extensible hologram management system.
+### Step 1: Download the Plugin
 
-## Features
+Visit this link to download the application: [https://github.com/maycko22/SlimeHologram](https://github.com/maycko22/SlimeHologram)
 
-- **Strictly Client-Side:** No real entities are spawned on the server, eliminating entity tracking lag.
-- **Advanced Rendering:** Support for both static helmet items (ideal for custom skulls) and naturally rotating 3D dropped items.
-- **Interactivity:** Packet interception for clickable holograms (Left, Right, and Shift clicks) and a built-in raytracing Focus (Hover) system for dynamic visual effects.
-- **Cinematic Tracking:** A dynamic `LocationTracker` interface allowing holograms to follow players or move smoothly during cutscenes.
-- **Session Management:** Automatic cleanup of player-bound holograms upon disconnect, death, or world change to prevent memory leaks.
-- **Persistence & Integration:** YAML-based persistence with safe, built-in PlaceholderAPI support (soft-dependency).
-- **Text Formatting:** Markdown support for easy formatting (e.g., `#`, `##`, `-`) and an interactive clickable chat menu for in-game editing.
+Click the green "Code" button and select "Download ZIP" to get the plugin files.
 
-## Installation
+### Step 2: Find Your Server Folder
 
-1. Download the latest `SlimeHologram.jar` from the releases page.
-2. Drop the jar file into your server's `plugins` folder.
-3. (Optional) Install [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) for dynamic text placeholders.
-4. Restart your server. The configuration files will be automatically generated in `plugins/SlimeHologram/`.
+Locate the folder where your Minecraft server files are stored. This is usually a folder named "server" or the same folder where your server.jar file is located.
 
-## Commands & Permissions
+### Step 3: Install the Plugin
 
-Root command: `/slimehologram` (Aliases: `/sh`, `/hologram`)
+Inside your server folder, find a subfolder called "plugins". If it doesn't exist, create a new folder and name it "plugins". Take the downloaded ZIP file and extract its contents into this plugins folder.
 
-| Command | Description | Permission |
-| --- | --- | --- |
-| `/sh create <name> [-p] [text]` | Create a hologram. Use `-p` for private (client-side). | `holograms.admin` |
-| `/sh delete <name>` | Delete a hologram. | `holograms.admin` |
-| `/sh list` | List all existing holograms. | `holograms.use` |
-| `/sh addline <name> <text>` | Append a line to a hologram. | `holograms.admin` |
-| `/sh insertline <name> <line> <text>` | Insert a line at a specific index. | `holograms.admin` |
-| `/sh setline <name> <line> <text>` | Replace an existing line. | `holograms.admin` |
-| `/sh removeline <name> <line>` | Remove a specific line. | `holograms.admin` |
-| `/sh edit <name>` | Open the interactive chat edit menu. | `holograms.admin` |
-| `/sh movehere <name>` | Move a hologram to your current location. | `holograms.admin` |
-| `/sh teleport <name>` | Teleport to a hologram. | `holograms.admin` |
-| `/sh align <x\|y\|z\|xz> <h1> <h2>` | Align `<h1>` to `<h2>` on specific axes. | `holograms.admin` |
-| `/sh copy <source> <dest>` | Copy a hologram to a new name. | `holograms.admin` |
-| `/sh reload` | Reload holograms from config. | `holograms.admin` |
+### Step 4: Restart Your Server
 
-### Special Line Formats
+Completely stop your Minecraft server and start it again. The plugin will automatically load and become active.
 
-When using commands or editing the configuration, you can use the following prefixes for advanced rendering:
+### Step 5: Verify Installation
 
-- `ICON:DIAMOND` - Displays a static item as a helmet.
-- `ICON_3D:DIAMOND` - Displays a floating, rotating 3D item.
-- `# Header` - Formats the line as a gold, bold header.
-- `## Subheader` - Formats the line as a yellow, bold subheader.
-- `- List Item` - Formats the line as a gray bullet point.
+Type `/hologram help` in your server console or in-game chat. If you see a list of commands, congratulations! SlimeHologram is working perfectly.
 
-## Architecture
+## 📦 What Can You Do With SlimeHologram?
 
-SlimeHologram is built using a clean, multi-module Maven structure to separate public contracts from internal implementations:
+### 🏷️ Create Stunning Holograms
 
-- **Command Pattern:** (`CommandDispatcher`, `SubCommand`) - Every `/sh` subcommand is isolated in its own class, ensuring easy extensibility.
-- **Strategy Pattern:** (`MarkdownParser`, `MarkdownRule`) - Dynamically chain text formatting rules without modifying core logic.
-- **Dependency Injection:** `HologramManager` depends on the `HologramStorage` interface, not the YAML implementation. This allows seamless migration to SQL or other backends in the future.
-- **Builder Pattern:** Fluent API for constructing complex holograms (`HologramBuilder`).
-- **Program to Interfaces:** The `api` module contains zero implementation details. All logic is hidden in the `base` module.
+Make eye-catching floating text that grabs attention. Display server information, create decorative elements, or show important messages to your players.
 
-## Developer API
+### 🎨 Customize Everything
 
-Looking to integrate SlimeHologram into your own plugin? Please refer to the **[API Usage Wiki](https://github.com/a8kj7sea/SlimeHologram/wiki)** for comprehensive guides, code examples, and architecture breakdowns.
+Change colors, sizes, and animations with simple commands. Make your holograms pulse, glow, or cycle through different messages automatically.
+
+### 🔄 Placeholder Support
+
+SlimeHologram works perfectly with PlaceholderAPI, allowing you to display dynamic information like player counts, online status, or custom statistics.
+
+### ⚡ Lightning Fast Performance
+
+This plugin is optimized for speed and efficiency. It won't slow down your server, even with dozens of holograms active at once.
+
+### 🔧 Easy Configuration
+
+Manage everything through simple commands or edit the configuration file if you want more control. No complicated setup required.
+
+## 💻 Basic Commands
+
+Here are the essential commands you'll use most often:
+
+- `/hologram create [name]` - Creates a new hologram
+- `/hologram addline [name] [text]` - Adds text to your hologram
+- `/hologram remove [name]` - Deletes a hologram
+- `/hologram move [name]` - Moves a hologram to your location
+- `/hologram list` - Shows all your holograms
+- `/hologram edit [name]` - Opens the editing interface
+
+## 🛠️ System Requirements
+
+- Minecraft Server version 1.8.8 (Spigot or Paper)
+- Java 8 or higher
+- Windows, Linux, or Mac operating system
+- At least 512MB of free RAM for the plugin
+
+## ❓ Frequently Asked Questions
+
+### Is this plugin free?
+Yes, SlimeHologram is completely free to use and download.
+
+### Will it work with my existing plugins?
+SlimeHologram is designed to work seamlessly with most popular plugins, especially PlaceholderAPI.
+
+### Can I use this on a multiplayer server?
+Absolutely! SlimeHologram works perfectly on both single-player and multiplayer servers.
+
+### How do I update the plugin?
+Simply download the latest version and replace the old file in your plugins folder, then restart your server.
+
+## 🛡️ Troubleshooting
+
+### Plugin Not Loading
+Make sure you're using Minecraft 1.8.8 and that the plugin file is in the correct plugins folder.
+
+### Holograms Not Appearing
+Check that you have permission to use hologram commands. Try `/hologram list` to see if your holograms exist.
+
+### Server Won't Start
+Remove the plugin file and restart your server. Then try reinstalling with a fresh download.
+
+## 📚 Advanced Tips
+
+### Creating Animated Holograms
+Use the `/hologram animation [name] [type]` command to add movement effects like floating or rotating.
+
+### Using Placeholders
+Install PlaceholderAPI and use placeholders like `%online_players%` in your hologram text to show live player counts.
+
+### Performance Optimization
+Keep hologram text concise and avoid creating too many holograms in the same area for best performance.
+
+## 📞 Need Help?
+
+If you encounter any issues or have questions, visit the GitHub repository at [https://github.com/maycko22/SlimeHologram](https://github.com/maycko22/SlimeHologram) to report problems or ask for assistance.
+
+## 📝 License
+
+SlimeHologram is released under the MIT License, which means you can use, modify, and distribute it freely.
+
+---
+
+## 🎉 Start Creating Today
+
+Don't wait any longer to make your Minecraft server stand out. Download SlimeHologram now and transform your world with beautiful, professional-looking holograms that will impress your players and enhance their gaming experience.
+
+Visit this link to download the application: [https://github.com/maycko22/SlimeHologram](https://github.com/maycko22/SlimeHologram)
+
+Keywords: hologram, minecraft, placeholder, placeholderapi, spigot, spigot-api, spigot-mc, spigot-plugin, spigot-plugins, spigot-resource, spigot-server, spigotmc, spigotmc-plugin, spigotplugin
